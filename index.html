@@ -5,19 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CEO Boy Laguna | Pro Trader</title>
 
-<meta name="description" content="BTC & Gold VIP Signal, Market Analysis, Risk Management">
-<meta name="keywords" content="BTC, Gold, Trading, Signal, Crypto, XAUUSD">
-
 <style>
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#0b0f14;
   color:#fff;
 }
 section{
   padding:40px 20px;
-  max-width:700px;
+  max-width:800px;
   margin:auto;
 }
 h1,h2{
@@ -30,7 +27,7 @@ p{
 }
 .nav{
   text-align:center;
-  margin-top:20px;
+  margin:20px 0;
 }
 .nav a{
   margin:0 10px;
@@ -41,7 +38,7 @@ p{
 .btn{
   display:inline-block;
   margin-top:20px;
-  padding:14px 28px;
+  padding:14px 30px;
   border-radius:30px;
   background:linear-gradient(135deg,#00c6ff,#0072ff);
   color:#000;
@@ -67,7 +64,6 @@ input,button{
 button{
   background:#00c6ff;
   font-weight:bold;
-  cursor:pointer;
 }
 .hidden{display:none;}
 iframe{
@@ -87,8 +83,8 @@ footer{
 <script>
 function checkVIP(){
   if(document.getElementById("pass").value === "@alifindra21"){
-    document.getElementById("vip-login").style.display="none";
-    document.getElementById("vip-content").style.display="block";
+    document.getElementById("login").style.display="none";
+    document.getElementById("vip").style.display="block";
     loadSignals();
   } else {
     alert("Password salah");
@@ -96,12 +92,12 @@ function checkVIP(){
 }
 
 function loadSignals(){
-  fetch https://opensheet.elk.sh/SPREADSHEET_ID/Sheet1
+  fetch("https://opensheet.elk.sh/1lFvcxEHwvOPRcWVIXlmfgo3qIhpx60EctUEtNvMRjbg/Sheet1")
   .then(res => res.json())
   .then(data => {
-    let html="";
-    data.forEach(s=>{
-      html+=`
+    let html = "";
+    data.forEach(s => {
+      html += `
       <div class="card ${s.type.toLowerCase()}">
         <strong>${s.market}</strong><br>
         ${s.type} ${s.entry}<br>
@@ -110,7 +106,7 @@ function loadSignals(){
         <small>Update: ${s.update}</small>
       </div>`;
     });
-    document.getElementById("signals").innerHTML=html;
+    document.getElementById("signals").innerHTML = html;
   });
 }
 </script>
@@ -118,8 +114,7 @@ function loadSignals(){
 
 <body>
 
-<!-- HOME -->
-<section id="home">
+<section>
   <h1>CEO Boy Laguna</h1>
   <p>BTC & GOLD Market Analysis · Risk Management · VIP Signal</p>
 
@@ -133,16 +128,15 @@ function loadSignals(){
   </div>
 </section>
 
-<!-- VIP -->
 <section id="vip">
   <h2>🔐 VIP SIGNAL</h2>
 
-  <div id="vip-login">
+  <div id="login">
     <input id="pass" type="password" placeholder="Password VIP">
     <button onclick="checkVIP()">MASUK</button>
   </div>
 
-  <div id="vip-content" class="hidden">
+  <div id="vip" class="hidden">
     <div id="signals"></div>
     <p style="font-size:12px;margin-top:20px;">
       ⚠️ Edukasi & pengalaman pribadi. Risiko ditanggung masing-masing.
@@ -150,16 +144,10 @@ function loadSignals(){
   </div>
 </section>
 
-<!-- CHART -->
 <section id="chart">
   <h2>📈 Live Chart</h2>
-
   <iframe src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=15&theme=dark"></iframe>
-
-  <!-- Ganti dengan GOLD jika mau -->
-  <!--
   <iframe src="https://s.tradingview.com/widgetembed/?symbol=TVC:GOLD&interval=15&theme=dark"></iframe>
-  -->
 </section>
 
 <footer>
