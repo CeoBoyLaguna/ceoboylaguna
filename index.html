@@ -1,94 +1,141 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CEO Boy Laguna</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEO Boy Laguna | Pro Trader</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #ffffff;
+      background: #0b0f1a;
+      color: #e0e0e0;
     }
     .container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
+      max-width: 1100px;
+      margin: auto;
       padding: 20px;
     }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    h2 {
-      font-size: 1.2rem;
-      font-weight: normal;
+    header {
+      text-align: center;
       margin-bottom: 30px;
-      color: #cfd9df;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      color: #00e5ff;
+    }
+    header h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      color: #9fa8da;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
     }
     .card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      padding: 30px;
-      max-width: 420px;
-      width: 100%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      background: #12172a;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
     }
-    .card p {
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 15px;
+    .card h3 {
+      margin-top: 0;
+      color: #00e5ff;
+    }
+    .signal {
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+    .buy {
+      background: rgba(0, 255, 150, 0.15);
+      border-left: 4px solid #00ff96;
+    }
+    .sell {
+      background: rgba(255, 80, 80, 0.15);
+      border-left: 4px solid #ff5050;
+    }
+    .neutral {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 4px solid #cccccc;
     }
     .btn {
       display: inline-block;
+      margin-top: 15px;
       padding: 12px 24px;
       border-radius: 30px;
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: #ffffff;
+      background: linear-gradient(135deg, #00e5ff, #2979ff);
+      color: #fff;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 15px;
     }
     footer {
+      text-align: center;
       margin-top: 40px;
       font-size: 0.85rem;
-      color: #b0bec5;
+      color: #9aa0c4;
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h1>CEO Boy Laguna</h1>
-    <h2>Trader · Market Analysis · Risk Management</h2>
+    <header>
+      <h1>CEO Boy Laguna</h1>
+      <h2>Trader · Market Analysis · Risk Management</h2>
+    </header>
 
-    <div class="card">
-      <p>
-        Selamat datang di website resmi <strong>CEO Boy Laguna</strong>.
-        Fokus pada analisa market, trading crypto & gold,
-        serta manajemen risiko yang disiplin.
-      </p>
+    <div class="grid">
+      <!-- CHART -->
+      <div class="card">
+        <h3>📊 Live Market Chart</h3>
 
-      <p style="font-size:0.85rem;color:#b0bec5;">
-        ⚠️ Disclaimer: Trading memiliki risiko tinggi. Website ini tidak memberikan ajakan investasi.
-      </p>
+        <!-- TradingView Widget -->
+        <div style="height:450px;">
+          <iframe 
+            src="https://s.tradingview.com/widgetembed/?symbol=BINANCE:BTCUSDT&interval=15&theme=dark&style=1&locale=id"
+            width="100%" height="100%" frameborder="0" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
 
-      <p>
-        Konten website ini bersifat edukasi dan sharing pengalaman.
-        Semua keputusan trading adalah tanggung jawab masing-masing.
-      </p>
+      <!-- SIGNAL -->
+      <div class="card">
+        <h3>📌 Market Signal</h3>
 
-      <a href="https://wa.me/6282269905761" class="btn">
-        Hubungi via WhatsApp
-      </a>
+        <div class="signal buy">
+          <strong>BTCUSD</strong><br>
+          Bias: BUY on Support<br>
+          Area Buy: 89,600 – 89,800<br>
+          TP: 90,400 – 91,000<br>
+          SL: < 89,200
+        </div>
+
+        <div class="signal sell">
+          <strong>XAUUSD</strong><br>
+          Bias: SELL on Resistance<br>
+          Area Sell: 2048 – 2055<br>
+          TP: 2032<br>
+          SL: > 2060
+        </div>
+
+        <div class="signal neutral">
+          ⚠️ Semua sinyal bersifat edukasi.<br>
+          Gunakan risk management.
+        </div>
+
+        <a href="https://wa.me/6282269905761" class="btn">
+          Hubungi via WhatsApp
+        </a>
+      </div>
     </div>
 
     <footer>
+      ⚠️ Disclaimer: Trading memiliki risiko tinggi. Website ini tidak memberikan ajakan investasi.<br>
       © 2026 ceoboylaguna.com · All rights reserved
     </footer>
   </div>
